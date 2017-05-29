@@ -2,12 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    console.log('Hey')
-    res.json({
-        data: {
-            finished: true
-        }
-    });
+    res.send('OTU Assessment Under Construction');
 });
 
 app.listen(3000, () => {
