@@ -1,18 +1,21 @@
-"use strict"
+'use strict'
 const express = require('express')
 const app = express();
-
+const bodyParser = require('body-parser')
 const db = require('./db/config')
 
 const user = require('./user/user')
 
-app.get('/', (req, res) => {
+// middleware
+app.use(bodyParser.json())
 
-    user.create('David', (err, user) => {
+app.get('/:name', (req, res) => {
+    console.log(req.params.name)
+    user.create(req.params.name, (err, user) => {
         if (user)
-            res.send(user.getName())
+            return res.send(user.getName())
 
-        res.send(err)
+        res.send(`${req.params.name} already registered`)
     })
 
     // res.send('OTU Assessment Under Construction');
