@@ -11,6 +11,8 @@ const schema = mongoose.Schema({
     description: String // Science, Art, Education
 })
 
+const Faculty = mongoose.model('Faculty', schema)
+
 module.exports.create = (description, level, degree) => {
 
 }

@@ -24,6 +24,8 @@ const schema = mongoose.Schema({
     //TODO still need lots of params
 })
 
+const Course = mongoose.model('Course', schema)
+
 module.exports.create = (description, level, degree) => {
 
 }

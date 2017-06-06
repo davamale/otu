@@ -27,6 +27,8 @@ const schema = mongoose.Schema({
 
 // }
 
+const CourseCatalog = mongoose.model('CourseCatalog', schema)
+
 module.exports.create = (description, level, degree) => {
 
 }
