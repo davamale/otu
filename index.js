@@ -21,17 +21,25 @@ app.get('/', (req, res) => {
 
 app.get('/:name', (req, res) => {
     console.log(req.params.name)
-    user.create(req.params.name, (err, user) => {
-        if (user)
-            return res.send(user.getName())
+    user.create(req.params.name)
+        .then(user => {
+            res.send(user.getName())
+        })
+        .catch(err => {
+            res.send(`${req.params.name} already registered. Error: ${err}`)
+        })
 
-        res.send(`${req.params.name} already registered`)
-    })
+    // user.create(req.params.name, (err, user) => {
+    //     if (user)
+    //         return res.send(user.getName())
+
+    //     res.send(`${req.params.name} already registered`)
+    // })
 
     // res.send('OTU Assessment Under Construction');
 
 })
 
 const server = app.listen(3000, () => {
-    console.log(`listening on port ${server.address().port}`);
+    console.log(`listening on port ${server.address().port}`)
 })

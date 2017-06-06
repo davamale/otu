@@ -19,10 +19,11 @@ schema.loadClass(UserClass)
 
 const User = mongoose.model('User', schema)
 
-module.exports.create = (name, cb) => {
+module.exports.create = (name) => {
 
     const user = new User({
         name: name
     })
-    user.save(cb);
+
+    return user.save()
 }
