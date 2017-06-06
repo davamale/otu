@@ -1,4 +1,5 @@
-var mongoose = require('mongoose');
+'use strict'
+const mongoose = require('mongoose');
 
 const schema = mongoose.Schema({
     name: {
@@ -16,7 +17,7 @@ class UserClass {
 
 schema.loadClass(UserClass)
 
-var User = mongoose.model('User', schema)
+const User = mongoose.model('User', schema)
 
 module.exports.create = (name, cb) => {
 

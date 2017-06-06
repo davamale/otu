@@ -9,6 +9,16 @@ const user = require('./user/user')
 // middleware
 app.use(bodyParser.json())
 
+// Error middleware
+app.use(function(err, req, res, next) {
+    console.error(err.stack)
+    res.status(500).send('Something broke!')
+})
+
+app.get('/', (req, res) => {
+    res.status(200).send("Add your name like at the of the url like this URL/'your name'; to add it to the db.")
+})
+
 app.get('/:name', (req, res) => {
     console.log(req.params.name)
     user.create(req.params.name, (err, user) => {
