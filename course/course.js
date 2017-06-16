@@ -20,8 +20,7 @@ const schema = mongoose.Schema({
         min: 1950,
         max: 9999
     }
-
-    //TODO still need lots of params
+    //TODO add objective
 })
 
 const Course = mongoose.model('Course', schema)
