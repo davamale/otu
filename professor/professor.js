@@ -8,20 +8,20 @@
 const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
-    firstName: {
-        required: true,
-        type: String
-    },
-    lastName: {
-        required: true,
-        type: String
-    }
+  firstName: {
+    required: true,
+    type: String
+  },
+  lastName: {
+    required: true,
+    type: String
+  }
 })
 
 class ProfessorClass {
-    getName() {
-        return `${this.firstName} ${this.lastName}`
-    }
+  getName () {
+    return `${this.firstName} ${this.lastName}`
+  }
 }
 
 schema.loadClass(ProfessorClass)

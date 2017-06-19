@@ -8,7 +8,7 @@
 const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
-    description: String // Science, Art, Education
+  description: String // Science, Art, Education
 })
 
 const Department = mongoose.model('Department', schema)

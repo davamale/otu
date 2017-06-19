@@ -18,17 +18,17 @@ app.use(bodyParser.json())
 // specific error handler
 // function errorSpecific (err, req, res, next) {
 //   if (req.xhr) {
-//       res.status(500).send({ error: 'Something failed!' })
-//     } else {
-//       next(err)
-//     }
+//     res.status(500).send({ error: 'Something failed!' })
+//   } else {
+//     next(err)
+//   }
 // }
 
 // general error handler
 function errorHandler (err, req, res, next) {
   res.status(500).send('error', {
-      error: err
-    })
+    error: err
+  })
 }
 
 // Error middleware
@@ -40,7 +40,6 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:name', (req, res) => {
-  console.log(req.params.name)
   user.create(req.params.name)
         .then(user => {
           res.send(user.getName())

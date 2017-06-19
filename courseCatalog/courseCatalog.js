@@ -8,19 +8,19 @@
 const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
-    courseId: String,
-    level: String,
-    degree: String,
-    facultySchools: [String],
-    courseType: String,
-    departments: [String],
-    programs: [{
-        description: String,
-        level: String
-    }],
-    mayors: [{
-        description: String
-    }]
+  courseId: String,
+  level: String,
+  degree: String,
+  facultySchools: [String],
+  courseType: String,
+  departments: [String],
+  programs: [{
+    description: String,
+    level: String
+  }],
+  mayors: [{
+    description: String
+  }]
 })
 
 // class CourseCatalogClass {
